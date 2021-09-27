@@ -1,5 +1,15 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  
+  const seenNumbers = {};
+
+  for (const number of array) {
+    const compliment = target - number;
+    if (compliment in seenNumbers) return true;
+    seenNumbers[number] = true;
+  }
+  
+  return false;
+
 }
 
 /* 
@@ -8,10 +18,14 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  iterate over each number
+    create an object of pairs
 */
 
 /*
   Add written explanation of your solution here
+  Create an array of array pairs
+
 */
 
 // You can run `node index.js` to view these console logs
